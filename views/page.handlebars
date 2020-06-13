@@ -1,0 +1,43 @@
+<br>
+<div class="header">
+      <h1>{{title}} Archives </h1>
+  </div>
+<div class="row">
+  
+  <div class="col-md-8 main">
+   {{#if data}}
+      {{#each data}}
+        <div class="post">
+          
+         
+        <div class="post-body">
+         
+            <h2 class="blog-post-title"><a href="/posts/{{_id}}">
+              {{title}}
+            </a></h2>
+         
+          <p class="blog-post-meta">
+            posted in <a href="/categories/{{category}}">{{category}} </a>
+            {{#formatDate}}
+              {{date}}
+            {{/formatDate}} by <a href="#">{{author}}</a></p>
+          <p>
+            {{#truncateText}}
+              {{{body}}}
+            {{/truncateText}}
+          </p>
+          <a href="/posts/{{_id}}" class="btn btn-default readmore">Read More</a>
+        </div>
+      </div>
+      {{/each}}
+      {{else}}
+        <div class="well">
+          <div class="row">
+            <h1 class="text-center">No Post Available</h1>
+          </div>
+        </div>
+  {{/if}}
+      
+  </div>
+  
+</div>

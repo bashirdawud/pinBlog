@@ -1,0 +1,27 @@
+<br>
+{{#if errors}}
+    {{#each errors}}
+        
+        <div class="alert alert-danger">
+            {{msg}}
+        </div>
+        
+    {{/each}}
+{{/if}}
+
+<form action="/categories/add" method="post"  >
+   
+    <legend>{{title}}</legend>
+
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" name="title" class="form-control"  placeholder="Title">
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+         
+</form>
+
+

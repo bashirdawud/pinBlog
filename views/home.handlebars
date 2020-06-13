@@ -1,0 +1,79 @@
+<br>
+<div class="header">
+      <h1>My Blog Post</h1>
+  </div>
+<div class="row">
+  
+  <div class="col-md-8 main">
+   {{#if posts}}
+      {{#each posts}}
+        <div class="post">
+          <img src="/images/uploads/{{imagename}}" alt="">
+         
+        <div class="post-body">
+         
+            <h2 class="blog-post-title"><a href="/posts/{{_id}}">
+              {{title}}
+            </a></h2>
+         
+          <p class="blog-post-meta">
+            posted in <a href="/categories/{{category}}">{{category}} </a>
+            {{#formatDate}}
+              {{date}}
+            {{/formatDate}} by <a href="#">{{author}}</a></p>
+          <p>
+            {{#truncateText}}
+              {{{body}}}
+            {{/truncateText}}
+          </p>
+          <a href="/posts/{{_id}}" class="btn btn-default readmore">Read More</a>
+        </div>
+      </div>
+      {{/each}}
+      {{else}}
+        <div class="well">
+          <div class="row">
+            <h1 class="text-center">No Post Available</h1>
+          </div>
+        </div>
+  {{/if}}
+      
+  </div>
+       <div class="col-md-4 side-bar">
+                  
+                 <ul class="ul list-group">
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search for...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+                        </div><!-- /input-group -->
+                  </ul>
+                  <ul class="ul list-group">
+                          <a href="#" class="list-group-item title">
+                            <h4>Popular Topics</h4>
+                          </a>
+                          {{#if category}}
+                          {{#each category}}
+                                <a href="/categories/{{title}}" class="list-group-item"><span>{{title}}</span></a>
+                          {{/each}}
+                          {{/if}}
+                         
+                          </ul>
+                    
+                     <ul class="ul list-group">
+                          <a href="#" class="list-group-item title">
+                            <h4>Archives</h4>
+                          </a>
+                          <a href="#" class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><span>January</span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><span>March</span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><span>June</span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><span>September</span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><span>December</span></a>
+                         
+                    </ul>
+                    
+                     
+                </div>
+  
+</div>

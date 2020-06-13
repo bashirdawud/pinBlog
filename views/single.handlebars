@@ -1,0 +1,64 @@
+<br>
+
+<div class="header">
+      <h1>{{title}}  </h1>
+  </div>
+<div class="row">
+  
+  <div class="col-md-8 main">
+   {{#if post}}
+    {{#each post}}
+     
+        <div class="post">
+          <img src="/images/uploads/{{imagename}}" alt="">
+         <div class="post-body">
+                            
+          <p class="blog-post-meta">
+            Posted on
+            {{#formatDate}}
+              {{date}}
+            {{/formatDate}} by <a href="#">{{author}}</a>
+          </p>
+          <p>{{{body}}}</p>
+          
+        </div>
+      </div>
+     {{/each}}
+      {{else}}
+        <div class="well">
+          <div class="row">
+            <h1 class="text-center">No Post Available</h1>
+          </div>
+        </div>
+  {{/if}}
+      
+  </div>
+  
+
+</div>
+<div class="row">
+
+  
+</div>
+  <div id="disqus_thread"></div>
+  <script>
+    var url = window.location.pathname;
+var id = url.substring(url.lastIndexOf('/') + 1);
+
+//console.log(id)
+   /* var disqus_config = function () {
+        this.page.url = 'http://localhost:9000/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = `http://localhost:9000/posts/${id}`; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        console.log(this.page.identifier)
+    };*/
+    
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://http-localhost-9000-1.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>

@@ -1,0 +1,54 @@
+<br>
+{{#if errors}}
+    {{#each errors}}
+        
+        <div class="alert alert-danger">
+            {{msg}}
+        </div>
+        
+    {{/each}}
+{{/if}}
+
+<form action="/posts/add" method="post" enctype="multipart/form-data" >
+   
+    <legend>Add Post</legend>
+
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" name="title" class="form-control"  placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label for="">Category</label>
+        <select name="category" class="form-control" >
+            {{#if categories}}
+                {{#each categories}}
+                    <option value="{{title}}">{{title}}</option>
+                {{/each}}
+            {{/if}}
+        
+    </select>
+    </div>
+   <div class="form-group">
+        <label for="">Post Body</label>
+        <textarea name="body" id="body" class="form-control" placeholder="post content" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for=""></label>
+        <input type="file" name="mainimage"  class="form-control"   >
+    </div>   
+    <div class="form-group">
+        <label for="">Author</label>
+        <select name="author"  class="form-control" >
+        <option value="Acecode">Acecode</option>
+        <option value="Daxode">Daxode</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script> CKEDITOR.replace('body')</script>
+     
+</form>
+
+
